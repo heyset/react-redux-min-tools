@@ -1,21 +1,37 @@
 {
   "name": "react-redux-min-tools",
   "version": "0.1.0",
-  "type": "module",
-  "description": "Basic tools to reduce redux boilerplate",
+  "description": "Basic tools to help with redux",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watchAll"
   },
-  "keywords": [],
-  "author": "Matheus \"Set\" Inacio (https://github.com/heyset)",
-  "license": "ISC",
-  "dependencies": {
-    "react-redux": "^7.2.4",
-    "redux": "^4.1.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyset/react-redux-min-tools.git"
   },
+  "keywords": [
+    "react",
+    "redux",
+    "tools",
+    "state",
+    "store"
+  ],
+  "author": "Matheus \"Set\" Inacio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heyset/react-redux-min-tools/issues"
+  },
+  "homepage": "https://github.com/heyset/react-redux-min-tools#readme",
   "devDependencies": {
     "cross-env": "^7.0.3",
     "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0"
   }
 }
