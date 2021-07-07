@@ -1,6 +1,6 @@
 {
   "name": "react-redux-min-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Basic tools to help with redux",
   "main": "index.js",
   "directories": {
