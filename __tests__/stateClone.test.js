@@ -185,3 +185,60 @@ describe('With an ARRAY consisting of primitive values, other ARRAYS and OBJECTS
     expect(originalArray).toEqual(untouchedOriginalArray);
   });
 });
+
+describe('With an OBJECT containing DATE objects:', () => {
+  let originalObject;
+  const testDate = new Date();
+
+  const untouchedOriginalObject = { 
+    yearsInPrison: 100,
+    favoritePlace: 'hell',
+    shouldBeFree: true,
+    lovedOnes: null,
+    leastFavoritePlace: undefined,
+    kills: BigInt(10000),
+    today: testDate,
+    twoThousandNineteen: testDate.setFullYear(2019),
+  };
+
+  beforeEach(() => {
+    originalObject = { 
+      yearsInPrison: 100,
+      favoritePlace: 'hell',
+      shouldBeFree: true,
+      lovedOnes: null,
+      leastFavoritePlace: undefined,
+      kills: BigInt(10000),
+      today: testDate,
+      twoThousandNineteen: testDate.setFullYear(2019),
+    };
+  });
+
+  it('returns an object that looks identical', () => {
+    const clone = stateClone(originalObject);
+
+    expect(clone).toEqual(untouchedOriginalObject);
+  });
+
+  it('but is not a reference to the same object', () => {
+    const clone = stateClone(originalObject);
+
+    clone.yearsInPrison = 300000;
+    clone.favoritePlace = 'definitely not hell';
+    clone.twoThousandNineteen = clone.twoThousandNineteen.setFullYear(666);
+
+    const expectedOutcome = { 
+      yearsInPrison: 300000,
+      favoritePlace: 'definitely not hell',
+      shouldBeFree: true,
+      lovedOnes: null,
+      leastFavoritePlace: undefined,
+      kills: BigInt(10000),
+      today: testDate,
+      twoThousandNineteen: testDate.setFullYear(666),
+    };
+
+    expect(clone).toEqual(expectedOutcome);
+    expect(originalObject).toEqual(untouchedOriginalObject);
+  });
+});
