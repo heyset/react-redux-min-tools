@@ -1,6 +1,6 @@
 {
   "name": "react-redux-min-tools",
-  "version": "0.2.3",
+  "version": "0.3.1",
   "description": "Basic tools to help with redux",
   "main": "index.js",
   "type": "module",
@@ -32,6 +32,7 @@
     "jest": "^27.0.6"
   },
   "dependencies": {
+    "clone-deep": "^4.0.1",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
