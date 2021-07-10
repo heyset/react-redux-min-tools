@@ -188,8 +188,6 @@ describe('With an ARRAY consisting of primitive values, other ARRAYS and OBJECTS
 
 describe('With an OBJECT containing DATE objects:', () => {
   let originalObject;
-  const testDate = new Date();
-
   const untouchedOriginalObject = { 
     yearsInPrison: 100,
     favoritePlace: 'hell',
@@ -197,8 +195,8 @@ describe('With an OBJECT containing DATE objects:', () => {
     lovedOnes: null,
     leastFavoritePlace: undefined,
     kills: BigInt(10000),
-    today: testDate,
-    twoThousandNineteen: testDate.setFullYear(2019),
+    today: new Date('2021-07-10T00:38:45.351Z'),
+    twoThousandNineteen: new Date('2019-07-10T00:38:45.339Z'),
   };
 
   beforeEach(() => {
@@ -209,8 +207,8 @@ describe('With an OBJECT containing DATE objects:', () => {
       lovedOnes: null,
       leastFavoritePlace: undefined,
       kills: BigInt(10000),
-      today: testDate,
-      twoThousandNineteen: testDate.setFullYear(2019),
+      today: new Date('2021-07-10T00:38:45.351Z'),
+      twoThousandNineteen: new Date('2019-07-10T00:38:45.339Z'),
     };
   });
 
@@ -234,8 +232,8 @@ describe('With an OBJECT containing DATE objects:', () => {
       lovedOnes: null,
       leastFavoritePlace: undefined,
       kills: BigInt(10000),
-      today: testDate,
-      twoThousandNineteen: testDate.setFullYear(666),
+      today: new Date('2021-07-10T00:38:45.351Z'),
+      twoThousandNineteen: new Date('2019-07-10T00:38:45.339Z').setFullYear(666),
     };
 
     expect(clone).toEqual(expectedOutcome);
